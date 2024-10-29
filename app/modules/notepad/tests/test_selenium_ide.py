@@ -4,18 +4,19 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
+# from webdriver_manager.chrome import ChromeDriverManager
 
 
 class TestCreatenotepad():
     def setup_method(self, method):
         chrome_options = webdriver.ChromeOptions()
         chrome_options.binary_location = "/usr/bin/google-chrome"
+        chromedriver_path = "/usr/local/bin/chromedriver/chromedriver"
         self.driver = webdriver.Chrome(
-          service=Service(ChromeDriverManager().install()),
-          options=chrome_options)
+            service=Service(chromedriver_path),
+            options=chrome_options)
         self.vars = {}
-  
+        
     def teardown_method(self, method):
         self.driver.quit()
     

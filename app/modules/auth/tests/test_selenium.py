@@ -8,7 +8,7 @@ from core.selenium.common import initialize_driver, close_driver
 
 
 def test_login_and_check_element():
-
+    
     driver = initialize_driver()
 
     try:
